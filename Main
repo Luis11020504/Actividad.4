@@ -1,0 +1,18 @@
+package producto1;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Producto1 p1 = new Electronico(1, "Laptop HP", 15000, 12);
+        Producto1 p2 = new Alimento(2, "Leche", 25.50, "12/12/2025");
+        Producto1 p3 = new Ropa(3, "Playera Nike", 899.99, "M");
+
+        Producto1[] productos = { p1, p2, p3 };
+
+        for (Producto1 p : productos) {
+            System.out.println(p.mostrarInfo());
+            System.out.println("Precio con descuento: " + p.calcularDescuento());
+            System.out.println("----------------------------------");
+        }
+    }
+}

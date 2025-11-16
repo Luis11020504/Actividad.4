@@ -1,0 +1,32 @@
+package producto1;
+public class Ropa extends Producto1 implements Inventariable {
+
+    private final String talla;
+    private int stock;
+
+    public Ropa(int id, String nombre, double precio, String talla) {
+        super(id, nombre, precio);
+        this.talla = talla;
+        this.stock = 0;
+    }
+
+    @Override
+    public String mostrarInfo() {
+        return "Ropa: " + nombre + " | Talla: " + talla + " | Precio: " + precio;
+    }
+
+    @Override
+    public double calcularDescuento() {
+        return precio * 0.85; // 15% descuento
+    }
+
+    @Override
+    public void actualizarStock(int cantidad) {
+        stock += cantidad;
+    }
+
+    @Override
+    public int obtenerStock() {
+        return stock;
+    }
+}

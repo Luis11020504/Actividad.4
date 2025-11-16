@@ -1,0 +1,32 @@
+package producto1;
+public class Alimento extends Producto1 implements Inventariable {
+
+    private final String fechaCaducidad;
+    private int stock;
+
+    public Alimento(int id, String nombre, double precio, String fechaCaducidad) {
+        super(id, nombre, precio);
+        this.fechaCaducidad = fechaCaducidad;
+        this.stock = 0;
+    }
+
+    @Override
+    public String mostrarInfo() {
+        return "Alimento: " + nombre + " | Caducidad: " + fechaCaducidad + " | Precio: " + precio;
+    }
+
+    @Override
+    public double calcularDescuento() {
+        return precio * 0.80; // 20% descuento
+    }
+
+    @Override
+    public void actualizarStock(int cantidad) {
+        stock += cantidad;
+    }
+
+    @Override
+    public int obtenerStock() {
+        return stock;
+    }
+}

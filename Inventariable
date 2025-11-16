@@ -1,0 +1,7 @@
+package producto1;
+
+public interface Inventariable {
+    void actualizarStock(int cantidad);
+    int obtenerStock();
+}
+
